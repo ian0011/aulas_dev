@@ -9,3 +9,7 @@ class Cadastro (models.Model):
     email = models.EmailField(max_length=254)
     created_date = models.DateTimeField(default=timezone.now)
     notes = models.TextField(blank=True)
+
+    #Alterando o nome Exibido na lista de usuários
+    def __str__(self):
+        return f'{self.first_name} {self.last_name}'
