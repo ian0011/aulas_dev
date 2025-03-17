@@ -9,6 +9,8 @@ class Cadastro (models.Model):
     email = models.EmailField(max_length=254)
     created_date = models.DateTimeField(default=timezone.now)
     notes = models.TextField(blank=True)
+    show = models.BooleanField(default=True)
+    picture = models.ImageField(blank=True, upload_to='pictures/%Y/%m/')
 
     #Alterando o nome Exibido na lista de usuários
     def __str__(self):
@@ -21,3 +23,5 @@ class CadastroProfessor (models.Model):
     email = models.EmailField(max_length=254)
     created_date = models.DateTimeField(default=timezone.now)
     notes = models.TextField(blank=True)
+    show = models.BooleanField(default=True)
+    picture = models.ImageField(blank=True, upload_to='pictures/%Y/%m/')
